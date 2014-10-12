@@ -2,54 +2,50 @@
 
 <head>
 
-<link rel="stylesheet" href="grid.css">
 <link rel="stylesheet" href="doug-gets-fit.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+<script src="jquery-1.11.1.min.js"></script>
+<script src="d3.min.js"></script>
+<script src="doug-gets-fit.js"></script>
 
 </head>
 
 <body>
-<div class="container">
-<div class="row clearfix header">
-  <div class="column full">
-    <img class="portrait" src="doug.jpg"/>
-    <h1 class="name">Doug Gets Fit</h1>
-    <h1 class="score bad">148</h1>
-  </div>
-<div class="row clearfix">
-  <div class="column third">
-    <div class="row clearfix">
-      <div class="column full">
-        <div class="color-box red"></div>
-        <div> Some attribute</div>
-      </div>
+<div class="main-row header">
+    <div class="main-column name">
+      <h1>Doug gets</h1> <h1 class="bold">&nbsp;fit</h1>
     </div>
-    <div class="row clearfix">
-      <div class="color-box blue"></div>
-      Some attribute
-    </div>
-    <div class="row clearfix">
-      <div class="color-box green"></div>
-      Some attribute
-    </div>
-    <div class="row clearfix">
-      Some attribute
-    </div>
-  </div>
-  <div class="column two-thirds">
-    <div class="row clearfix">
-      Some content
-    </div>
-    <div class="row clearfix">
-      Some content
-    </div>
-    <div class="row clearfix">
-      Some content
-    </div>
-    <div class="row clearfix">
-      Some content
+    <div class="main-column score">
+      <h1 class="bad bold">148</h1>
     </div>
   </div>
 </div>
+<div class="main-row content">
+  <div class="main-column sidebar">
+    <div class="table-creator">
+      <div class="main-row">
+        <img class="portrait" src="doug.jpg"/>
+      </div>
+      <div class="main-row metrics">
+        <div class="main-row">
+          <div class="main-column metric-score bad"> 148 </div>
+          <div class="main-column metric">Doug Fitness Score </div>
+        </div>
+        <div class="main-row">
+          <div class="main-column metric-score good"> 34 </div>
+          <div class="main-column metric">Squat </div>
+        </div>
+      </div>
+      <div class="main-row fill-height">
+      </div>
+      <div class="main-row buttons">
+        <button class="main-row">Log out</button>
+      </div>
+    </div>
+  </div>
+  <div class="main-column graph">
+  <svg id="visualization"></svg>
+  </div>
 </div>
 </body>
 
