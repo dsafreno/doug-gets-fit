@@ -1,12 +1,33 @@
 var firebase = new Firebase("https://doug-gets-fit.firebaseio.com");
-firebase.onAuth(function(authData){
-  console.log(authData);
-});
 
 $(document).ready(function() {
-  firebase.authWithOAuthPopup("facebook", function(error, authData) {
-  });
+  tryLogin();
 });
+
+function tryLogin() {
+  var authData = firebase.getAuth();
+  if (authData) {
+    onLogin(authData);
+  } else {
+    firebase.authWithOAuthPopup("facebook", function(error, authData) {
+      if (error) {
+        alert("error logging in");
+      } else {
+        onLogin(authData);
+      }
+    });
+  }
+}
+
+function onLogin(authData) {
+  var uid = authData.uid;
+  firebase.child('users').child(uid).once('value', function(snapshot) {
+    var exists = (snapshot.val() !== null);
+    if (!exists) {
+      firebase.child('users').child(uid).set(authData);
+    }
+  });
+}
 
 function lambdaMetricScores(func) {
   return func(metrics, function(metric) {
