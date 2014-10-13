@@ -12,19 +12,9 @@
 <!-- firebase -->
 <script src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
 
-<!-- handlebars -->
-<script src="handlebars-v2.0.0.js"></script>
-
 <!-- my js -->
 <script src="doug-gets-fit.js"></script>
 
-<!-- templates -->
-<script id="metric-template" type="text/x-handlebars-template">
-  <div class="main-row">
-    <div class="main-column metric-score bad"> {{lastScore}} </div>
-    <div class="main-column metric"> {{name}} </div>
-  </div>
-</script>
 </head>
 
 <body>
@@ -52,7 +42,6 @@
           <div class="main-column metric-score good"> 34 </div>
           <div class="main-column metric">Squat </div>
         </div>
-        <button class="main-row" id="new-metric"> New Metric </button>
       </div>
       <div class="main-row fill-height">
       </div>
@@ -62,27 +51,9 @@
     </div>
   </div>
   <div class="main-column graph">
-  <svg id="visualization"></svg>
+    <svg id="visualization"></svg>
   </div>
 </div>
-
-<div class="new-metric-modal-wrapper modal-wrapper">
-  <div class="new-metric-modal modal">
-    <form>
-      New metric: <br>
-      <input id="new-metric-name" type="text" placeholder="name"/>
-      <input id="new-metric-submit" type="submit">
-    </form>
-  </div>
-</div>
-
-<div class="sign-in-modal-wrapper modal-wrapper">
-  <div class="sign-in-modal modal">
-    Please authenticate: <br>
-    <img src="facebook.png" id="facebook-sign-in"/>
-  </div>
-</div>
-
 </body>
 
 </html>

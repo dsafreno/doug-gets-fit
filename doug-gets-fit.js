@@ -1,31 +1,53 @@
 var firebase = new Firebase("https://doug-gets-fit.firebaseio.com");
 
 $(document).ready(function() {
-  tryLogin();
+  showLogin();
 });
+
+function showLogin() {
+}
 
 function tryLogin() {
   var authData = firebase.getAuth();
   if (authData) {
     onLogin(authData);
   } else {
-    firebase.authWithOAuthPopup("facebook", function(error, authData) {
-      if (error) {
-        alert("error logging in");
-      } else {
-        onLogin(authData);
-      }
+    $('.sign-in-modal-wrapper').show();
+    $('#facebook-sign-in').click(function(event){
+      event.preventDefault();
+      firebase.authWithOAuthPopup("facebook", function(error, authData) {
+        if (error) {
+          alert("error logging in");
+        } else {
+          onLogin(authData);
+        }
+      });
     });
   }
 }
 
 function onLogin(authData) {
+  $('.sign-in-modal-wrapper').hide();
   var uid = authData.uid;
   firebase.child('users').child(uid).once('value', function(snapshot) {
     var exists = (snapshot.val() !== null);
     if (!exists) {
+      authData['metrics'] = [{name: 'weight', records:[]}];
       firebase.child('users').child(uid).set(authData);
     }
+  });
+
+  $("#new-metric").click(function() {
+    $(".new-metric-modal-wrapper").show();
+    $("#new-metric-submit").click(function(event) {
+      event.preventDefault();
+      var name = $("#new-metric-name").val();
+      firebase.child('users').child(uid).child('metrics').push({
+        name: name,
+        records: []
+      });
+      $(".new-metric-modal-wrapper").hide();
+    });
   });
 }
 
