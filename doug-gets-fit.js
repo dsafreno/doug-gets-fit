@@ -1,11 +1,8 @@
 var firebase = new Firebase("https://doug-gets-fit.firebaseio.com");
 
 $(document).ready(function() {
-  showLogin();
+  tryLogin();
 });
-
-function showLogin() {
-}
 
 function tryLogin() {
   var authData = firebase.getAuth();
@@ -27,6 +24,7 @@ function tryLogin() {
 }
 
 function onLogin(authData) {
+  $('#header-name').text(authData.facebook.cachedUserProfile.first_name);
   $('.sign-in-modal-wrapper').hide();
   var uid = authData.uid;
   firebase.child('users').child(uid).once('value', function(snapshot) {
@@ -49,11 +47,15 @@ function onLogin(authData) {
       $(".new-metric-modal-wrapper").hide();
     });
   });
+  rerender();
 }
 
 function lambdaMetricScores(func) {
   return func(metrics, function(metric) {
-    var base = metric.records[0].score;
+    var base = 0;
+    if (metric.records.length > 0) {
+      base = metric.records[0].score;
+    }
     if (base < 1) {
       base = 1;
     }
