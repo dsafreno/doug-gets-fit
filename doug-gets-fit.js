@@ -1,8 +1,10 @@
+var firebase = new Firebase("https://doug-gets-fit.firebaseio.com");
+firebase.onAuth(function(authData){
+  console.log(authData);
+});
+
 $(document).ready(function() {
-  console.log('metrics: ', metrics);
-  rerender();
-  $(window).resize(function() {
-    rerender();
+  firebase.authWithOAuthPopup("facebook", function(error, authData) {
   });
 });
 
