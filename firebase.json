@@ -1,0 +1,9 @@
+{
+  "firebase": "doug-gets-fit",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
