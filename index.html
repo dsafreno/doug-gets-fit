@@ -21,43 +21,39 @@
 <!-- templates -->
 <script id="metric-template" type="text/x-handlebars-template">
   <div class="main-row">
-    <div class="main-column metric-score bad"> {{lastScore}} </div>
     <div class="main-column metric"> {{name}} </div>
+    <div class="main-column metric-score bad"> {{lastScore}} </div>
   </div>
 </script>
 </head>
 
 <body>
-<div class="main-row header">
-    <div class="main-column name">
-      <h1 id="header-name">Doug</h1> <h1>&nbsp;gets</h1> <h1 class="bold">&nbsp;fit</h1>
-    </div>
-    <div class="main-column score">
-      <h1 class="bad bold">148</h1>
-    </div>
-  </div>
-</div>
+<div class="background"></div>
+<div class="bg-overlay"></div>
 <div class="main-row content">
   <div class="main-column sidebar">
     <div class="table-creator">
-      <div class="main-row">
+      <div class="main-row header">
         <img class="portrait" src="doug.jpg"/>
+        <div class="header-info">
+          <div class="name">
+            <h1 id="header-name">Doug</h1> <h1>&nbsp;gets</h1> <h1 class="bold">&nbsp;fit</h1>
+          </div>
+          <h1>Score:</h1><h1 class="score bold">&nbsp;148</h1>
+        </div>
       </div>
       <div class="main-row metrics">
-        <div class="main-row">
-          <div class="main-column metric-score bad"> 148 </div>
+        <div class="main-row metric-row">
           <div class="main-column metric">Doug Fitness Score </div>
+          <div class="main-column metric-score bad"> 148 </div>
         </div>
-        <div class="main-row">
-          <div class="main-column metric-score good"> 34 </div>
+        <div class="main-row metric-row">
           <div class="main-column metric">Squat </div>
+          <div class="main-column metric-score good"> 34 </div>
         </div>
       </div>
-      <button class="main-row" id="new-metric"> New Metric </button>
+      <div class="main-row button" id="new-metric"> NEW METRIC </div>
       <div class="main-row fill-height">
-      </div>
-      <div class="main-row buttons">
-        <button class="main-row">Log out</button>
       </div>
     </div>
   </div>
@@ -69,7 +65,7 @@
 <div class="new-metric-modal-wrapper modal-wrapper">
   <div class="new-metric-modal modal">
     <form>
-      New metric: <br>
+      Add metric: <br>
       <input id="new-metric-name" type="text" placeholder="name"/>
       <input id="new-metric-submit" type="submit">
     </form>

@@ -37,6 +37,12 @@ function onLogin(authData) {
 
   $("#new-metric").click(function() {
     $(".new-metric-modal-wrapper").show();
+    $(".new-metric-modal-wrapper").click(function(event) {
+      $(".new-metric-modal-wrapper").hide();
+    });
+    $(".new-metric-modal").click(function(event) {
+      event.stopPropagation();
+    });
     $("#new-metric-submit").click(function(event) {
       event.preventDefault();
       var name = $("#new-metric-name").val();
@@ -129,6 +135,8 @@ function rerender() {
   }
 }
 
+// see https://color.adobe.com/create/color-wheel/?base=2&rule=Custom&selected=4&name=My%20Kuler%20Theme&mode=rgb&rgbvalues=0.40444180404398655,0.6725490196078432,0.45853240133030854,0.6335547122074636,0.8324633531966306,0.9771241830065359,0.9725490196078431,0.9725490196078431,0.5333333333333333,0.7725490196078431,0.46604636520506193,0.4738693335377751,0.6725490196078432,0.5722356791202101,0.4052827283171662&swatchOrder=0,1,2,3,4
+// and use F8E71C on http://www.59times.com/times/color-palette-generator/color-palette-generator.aspx?r=121&g=108&b=17
 var colors = [
   'red',
   'blue',
