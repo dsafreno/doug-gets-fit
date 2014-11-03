@@ -1,0 +1,194 @@
+// bower:scss
+// endbower
+
+$yellow: #F8E71C;
+
+html, body {
+  padding:0;
+  margin:0;
+  height: 100%;
+  width: 100%;
+  display:table;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color:white;
+}
+
+body {
+  background-size: 150%;
+  background-image: image-url('gym.jpg');
+}
+
+.button {
+  background-color: $yellow;
+  position:relative;
+  font-family: 'Oswald', sans-serif;
+  font-size:20px;
+  color: black;
+  height:40px;
+
+  > * {
+    position:absolute;
+  }
+
+  > img {
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+  }
+
+  > span {
+    left: 40px;
+    top:5px;
+  }
+}
+
+#visualization {
+  position:absolute;
+  top:30px;
+  width: 60%;
+  height: 90%;
+}
+
+.content {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin:0;
+  > * {
+    width: 100%;
+    height:100%;
+  }
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight:300;
+  letter-spacing: 4px;
+  font-size: 40px;
+}
+
+.yellow {
+  color: $yellow;
+}
+
+.signin-content {
+  display: table;
+  position:absolute;
+  top:-60px;
+  width:100%;
+  height:100%;
+  text-align:center;
+
+  h1 {
+    font-size: 80px;
+  }
+
+  > * {
+    display:table-cell;
+    vertical-align: middle;
+  }
+
+  img {
+    margin-top:-20px;
+    width: 300px;
+  }
+}
+
+.main-content {
+  width:100%;
+  height:100%;
+
+  .vertical-pane {
+    display: inline-block;
+  }
+
+  .left-pane {
+    width: 300px;
+    padding-left:40px;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-right:20px;
+
+    .user-info {
+      position:relative;
+      height:150px;
+
+      .portrait {
+        position: absolute;
+        width:80px;
+        height:80px;
+        left:5px;
+        top:30px;
+        border-radius: 41px;
+        border: 1px solid #D9D9D9;
+      }
+
+      .header-name {
+        position:absolute;
+        width: 300px;
+        line-height: 45px;
+        left: 105px;
+      }
+    }
+
+    .metrics {
+      margin-left: 0px;
+      margin-right: 0px;
+
+      .metric {
+        height:40px;
+        margin-left: 0px;
+        margin-right: 0px;
+        > * {
+          margin-top:0px;
+          margin-bottom:0px;
+        }
+        .metric-name {
+          float:left;
+        }
+        .metric-score {
+          padding-right:5px;
+          width:60px;
+          text-align: right;
+          float: right;
+        }
+      }
+      .fitness-score {
+        font-family: 'Oswald', sans-serif;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size:50px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
