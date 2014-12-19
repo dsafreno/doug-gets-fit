@@ -1,25 +1,5 @@
 'use strict';
 
-var colors = [
-  "#F8E71C",
-  "#F71C9B",
-  "#1CADF7",
-  "#1CF779",
-  "#DD3A39",
-  "#FF8600",
-  "#7654F9"
-];
-
-function bgColorFrom(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return "rgba(" +
-    parseInt(result[1], 16).toString() + ", " +
-    parseInt(result[2], 16).toString() + ", " +
-    parseInt(result[3], 16).toString() + ", " +
-    (0.5).toString() + ");";
-}
-
-
 /**
  * @ngdoc function
  * @name dougGetsFitApp.controller:MainCtrl
@@ -31,44 +11,61 @@ app.controller('MainCtrl', function ($scope) {
   var authData = firebase.getAuth();
   $scope.profileUrl = authData.facebook.cachedUserProfile.picture.data.url;
   $scope.displayName = authData.facebook.cachedUserProfile.first_name.toUpperCase();
+  var fitnessScoreName = authData.facebook.cachedUserProfile.first_name + " Fitness Score";
+  var ref = firebase.child('users').child(authData.uid).child('metrics');
+  ref.on('value', function(snap) {
+    var metrics = snap.val();
+    if (metrics.weight !== 'placeholder' && metrics.numerators !== 'placeholder') {
+      displayMetrics(snap.val().metrics, fitnessScoreName);
+    } else {
+      console.log('setting');
+      console.log(authData.uid);
+      ref.update({
+        metrics: {
+          weight: [],
+          numerators: []
+        }
+      });
+    }
+  });
+});
+
+function displayMetrics(metrics, fitnessScoreName) {
   var displayMetrics = [];
-  console.log(metrics);
-  var fitnessScoreName = $scope.displayName + " FITNESS SCORE";
   displayMetrics.push({
     name: fitnessScoreName,
     score: fitnessScore(metrics, Date.now()),
-    background: "",
-    classes: "fitness-score yellow"
+    background: colors.get(0, 0.5)
   });
   displayMetrics.push({
     name: "Weight",
     score: _.last(metrics.weight).score,
-    background: bgColorFrom(colors[1])
+    background: colors.get(1, 0.5)
   });
   _.each(metrics.numerators, function(numerator, index) {
     var record = _.last(numerator.records);
     displayMetrics.push({
       name: numerator.name,
       score: numerator.c * record.score + numerator.k,
-      background: bgColorFrom(colors[index + 2])
+      background: colors.get(index + 2, 0.5)
     });
   });
 
   // Do rounding
   displayMetrics = _.map(displayMetrics, function(displayMetric, index) {
-    if (index == 0) {
+    if (index === 0) {
       displayMetric.score = (Math.round(displayMetric.score * 100) / 100).toFixed(2);
     } else {
       displayMetric.score = (Math.round(displayMetric.score * 10) / 10).toFixed(1);
     }
     return displayMetric;
   });
-  $scope.metrics = displayMetrics;
   $(window).resize(function() {
-    renderGraph(metrics, fitnessScoreName);
+    renderGraph(metrics, fitnessScoreName, $(window).width() - 400);
   });
-  renderGraph(metrics, fitnessScoreName);
-});
+  renderGraph(metrics, fitnessScoreName, 2000);
+  $(window).resize();
+}
 
 function constructFitnessScores(metricsData, fitnessScoreName) {
   var dates = [];
@@ -124,7 +121,15 @@ function fitnessScore(metrics, timeInMillis) {
   return sum / lastRecordBefore(metrics.weight, timeInMillis, 0).score;
 }
 
-function renderGraph(metricsData, fitnessScoreName) {
+function renderGraph(metricsData, fitnessScoreName, width, focusedIndex) {
+  var MARGINS = {
+    top: 20,
+    right: 20,
+    bottom: 20,
+    left: 45
+  };
+  $('#visualization').width(width);
+  $('#visualization').height($(window).height() - 70);
   var metrics = _.clone(metricsData.numerators);
   metrics.unshift({
     name: "Weight",
@@ -136,12 +141,6 @@ function renderGraph(metricsData, fitnessScoreName) {
   vis.selectAll('*').remove();
   var WIDTH = $("#visualization").width();
   var HEIGHT = $("#visualization").height();
-  var MARGINS = {
-    top: 20,
-    right: 20,
-    bottom: 20,
-    left: 50
-  };
   var xRange = d3.time.scale()
     .range([MARGINS.left, WIDTH - MARGINS.right])
     .domain([d3.min(metrics, function(metric) {
@@ -164,6 +163,7 @@ function renderGraph(metricsData, fitnessScoreName) {
     .scale(yRange)
     .tickSize(1)
     .orient('left')
+    .tickFormat(d3.format(".0%"))
     .tickSubdivide(true);
   vis.append('svg:g')
     .attr('class', 'x axis')
@@ -181,6 +181,7 @@ function renderGraph(metricsData, fitnessScoreName) {
     .attr('fill', 'white')
     .attr('transform', 'translate(' + (MARGINS.left) + ',0)')
     .call(yAxis);
+  console.log(focusedIndex);
   for (var i = metrics.length - 1; i >= 0; i--) {
     var lineFunc = d3.svg.line()
       .x(function(record) {
@@ -195,11 +196,30 @@ function renderGraph(metricsData, fitnessScoreName) {
       })
       .interpolate('step');
 
+    var strokeWidth = 1;
+    if (focusedIndex) {
+      strokeWidth = focusedIndex === i ? 2 : 1;
+    }
+
+    var color = colors.get(i, 1);
+    if (focusedIndex) {
+      colors.get(i, focusedIndex === i ? 1 : 0.3)
+    }
+    console.log(i);
+
     vis.append('svg:path')
       .attr('d', lineFunc(metrics[i].records))
-      .attr('stroke', colors[i])
-      .attr('stroke-width', i == 0 ? 2 : 1)
+      .attr('stroke', color)
+      .attr('stroke-width', strokeWidth)
       .attr('fill', 'none');
+    vis.append('svg:path')
+      .attr('d', lineFunc(metrics[i].records))
+      .attr('stroke', 'rgba(0, 0, 0, 0)')
+      .attr('stroke-width', 10)
+      .attr('fill', 'none')
+      .on('click', function() {
+        renderGraph(metricsData, fitnessScoreName, width, i);
+      });
   }
 }
 
@@ -243,14 +263,14 @@ var metrics = {
 
 // Generate sample data
 var time = 1384066400000;
-var spacing = 15*24*60*60*1000;
+var spacing = 3*24*60*60*1000;
 var squat = 30;
 var bench = 30;
 var weight = 160;
-var expectedChange = 0.0;
+var expectedChange = 0.2;
 var dev = 0.75;
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 100; i++) {
   metrics.weight.push({
     timeInMillis: time,
     score: weight

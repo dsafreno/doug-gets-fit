@@ -1,20 +1,26 @@
 <div class="main-content">
   <div class="vertical-pane left-pane">
-    <div class="user-info">
-      <img class="portrait" src="{{ profileUrl }}"/>
-      <h1 class="header-name">{{ displayName }} <br> GETS <span class="yellow">FIT</span></h1>
-    </div>
-    <div class="metrics">
-      <div class="metric {{ metric.classes }}" ng-repeat-start="metric in metrics" ng-repeat-end>
-        <p class="metric-name"> {{ metric.name }} </p>
-        <p class="metric-score" style="background-color: {{ metric.background }}"> {{ metric.score }} </p>
+    <div class="flex">
+      <div class="user-info">
+        <img class="portrait" src="{{ profileUrl }}"/>
+        <h1 class="header-name">{{ displayName }} <br> GETS <span class="yellow">FIT</span></h1>
+      </div>
+      <div class="metrics">
+        <div class="metric" ng-repeat-start="metric in metrics" ng-repeat-end>
+          <p class="metric-name"> {{ metric.name }} </p>
+          <p class="metric-score" style="background-color: {{ metric.background }}"> {{ metric.score }} </p>
+        </div>
+      </div>
+      <div class="button new-metric">
+        <img src="images/plus-20.png"/> <span>NEW EXERCISE</span>
+      </div>
+      <div class="spacer"></div>
+      <div class="button new-workout">
+        <img src="images/plus-20.png"/> <span> NEW WORKOUT </span>
       </div>
     </div>
-    <div class="button new-metric">
-      <img src="images/plus-20.png"/> <span>NEW METRIC</span>
-    </div>
   </div>
-  <div class="vertical-pane">
+  <div class="vis-wrapper">
     <svg id="visualization"/>
   </div>
 </div>
