@@ -22,9 +22,6 @@ app.controller('SigninCtrl', function ($scope, $location) {
         var newUser = {};
         newUser[authData.uid] = authData;
         firebase.child('users').update(newUser);
-        $scope.$apply(function() {
-          $location.path("/");
-        });
       }
     });
   }
