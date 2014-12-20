@@ -35,6 +35,10 @@ var app = angular
         templateUrl: 'views/signin.html',
         controller: 'SigninCtrl'
       })
+      .when('/data', {
+        templateUrl: 'views/data.html',
+        controller: 'DataCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

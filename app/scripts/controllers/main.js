@@ -17,18 +17,15 @@ app.controller('MainCtrl', function ($scope, $location) {
   var fitnessScoreName = authData.facebook.cachedUserProfile.first_name + " Fitness Score";
   var ref = firebase.child('users').child(authData.uid).child('metrics');
   ref.on('value', function(snap) {
-    var metrics = snap.val();
+    // var metrics = snap.val();
+    $scope.metrics = metrics;
     if (metrics.weight !== 'placeholder' && metrics.numerators !== 'placeholder') {
       GraphUtil.displayMetrics(metrics, fitnessScoreName);
     } else {
-      $scope.$apply();
+      $location.path('/data');
     }
+    $scope.$apply();
   });
-});
-
-app.controller('DataPromptCtrl', function ($scope) {
-  $scope.emptyText = function() {
-  };
 });
 
 

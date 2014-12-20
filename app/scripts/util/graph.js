@@ -105,7 +105,6 @@ GraphUtil = (function() {
       records: metricsData.weight
     });
     metrics.unshift(constructFitnessScores(metricsData, fitnessScoreName));
-    console.log(metrics);
     var vis = d3.select('#visualization');
     vis.selectAll('*').remove();
     var WIDTH = $("#visualization").width();

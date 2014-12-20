@@ -73,7 +73,7 @@ h1 {
   color: $yellow;
 }
 
-.signin-content {
+.center-content {
   display: table;
   position:absolute;
   top:-60px;
@@ -81,13 +81,29 @@ h1 {
   height:100%;
   text-align:center;
 
-  h1 {
-    font-size: 80px;
-  }
-
   > * {
     display:table-cell;
     vertical-align: middle;
+  }
+
+  // .row {
+  //   display:table-row;
+  //   > * {
+  //     display: table-cell;
+  //   }
+  // }
+}
+
+
+.data {
+  h1 {
+    font-size: 60px;
+  }
+}
+
+.signin {
+  h1 {
+    font-size: 80px;
   }
 
   img {
