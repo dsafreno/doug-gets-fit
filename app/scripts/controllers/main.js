@@ -7,9 +7,11 @@
  * # MainCtrl
  * Controller of the dougGetsFitApp
  */
-app.controller('MainCtrl', function ($scope) {
-  $scope.empty = "nada";
+app.controller('MainCtrl', function ($scope, $location) {
   var authData = firebase.getAuth();
+  if (authData === null) {
+    $location.path("/");
+  }
   $scope.profileUrl = authData.facebook.cachedUserProfile.picture.data.url;
   $scope.displayName = authData.facebook.cachedUserProfile.first_name.toUpperCase();
   var fitnessScoreName = authData.facebook.cachedUserProfile.first_name + " Fitness Score";
@@ -19,7 +21,6 @@ app.controller('MainCtrl', function ($scope) {
     if (metrics.weight !== 'placeholder' && metrics.numerators !== 'placeholder') {
       GraphUtil.displayMetrics(metrics, fitnessScoreName);
     } else {
-      $scope.empty = "HOORAAYYY";
       $scope.$apply();
     }
   });
@@ -27,7 +28,6 @@ app.controller('MainCtrl', function ($scope) {
 
 app.controller('DataPromptCtrl', function ($scope) {
   $scope.emptyText = function() {
-    return $scope.empty;
   };
 });
 

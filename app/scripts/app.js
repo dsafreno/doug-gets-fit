@@ -15,6 +15,7 @@ var firebase = new Firebase("https://doug-gets-fit.firebaseio.com");
 function isLoggedIn() {
   return firebase.getAuth();
 }
+
 var app = angular
   .module('dougGetsFitApp', [
     'ngAnimate',
@@ -26,9 +27,13 @@ var app = angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
+      .when('/main', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
       .when('/', {
-        templateUrl: isLoggedIn() ? 'views/main.html' : 'views/signin.html',
-        controller: isLoggedIn() ? 'MainCtrl' : 'SigninCtrl'
+        templateUrl: 'views/signin.html',
+        controller: 'SigninCtrl'
       })
       .otherwise({
         redirectTo: '/'

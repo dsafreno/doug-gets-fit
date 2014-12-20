@@ -9,19 +9,26 @@
  */
 app.controller('SigninCtrl', function ($scope, $location) {
   var authData = firebase.getAuth();
+  if (authData !== null) {
+    $location.path("/main");
+    return;
+  }
   $scope.fblogin = function() {
     firebase.authWithOAuthPopup("facebook", function(error, authData) {
-      console.log(authData);
       if (error) {
         alert("error logging in");
       } else {
-        authData['metrics'] = {
-          'weight': 'placeholder',
-          'numerators': 'placeholder'
+        if (!authData.metrics) {
+          authData['metrics'] = {
+            'weight': 'placeholder',
+            'numerators': 'placeholder'
+          }
+          var newUser = {};
+          newUser[authData.uid] = authData;
+          firebase.child('users').update(newUser);
         }
-        var newUser = {};
-        newUser[authData.uid] = authData;
-        firebase.child('users').update(newUser);
+        $location.path("/main");
+        $scope.$apply()
       }
     });
   }
