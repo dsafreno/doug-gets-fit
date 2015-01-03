@@ -12,14 +12,19 @@ GraphUtil = (function() {
         score: _.last(metrics.weight).score,
         background: colors.get(1, 0.5)
       });
+      console.log(metrics);
       _.each(metrics.numerators, function(numerator, index) {
+        console.log(numerator, index);
         var record = _.last(numerator.records);
+        console.log(record);
         displayMetrics.push({
           name: numerator.name,
           score: numerator.c * record.score + numerator.k,
           background: colors.get(index + 2, 0.5)
         });
+        console.log("end");
       });
+      console.log('hello??');
       displayMetrics = _.map(displayMetrics, function(displayMetric, index) {
         if (index === 0) {
           displayMetric.score = (Math.round(displayMetric.score * 100) / 100).toFixed(2);
@@ -33,6 +38,7 @@ GraphUtil = (function() {
       });
       renderGraph(metrics, fitnessScoreName, 2000);
       $(window).resize();
+      return displayMetrics;
     }
   };
 
@@ -49,6 +55,8 @@ GraphUtil = (function() {
     });
     dates = _.uniq(_.sortBy(dates, function(date) { return date; }), true);
     return {
+      c: 1,
+      k: 0,
       name: fitnessScoreName,
       records: _.map(dates, function(date) {
         return {
@@ -102,26 +110,28 @@ GraphUtil = (function() {
     var metrics = _.clone(metricsData.numerators);
     metrics.unshift({
       name: "Weight",
-      records: metricsData.weight
+      records: metricsData.weight,
+      c: 1,
+      k: 0
     });
     metrics.unshift(constructFitnessScores(metricsData, fitnessScoreName));
     var vis = d3.select('#visualization');
     vis.selectAll('*').remove();
     var WIDTH = $("#visualization").width();
     var HEIGHT = $("#visualization").height();
+    var xMin = MARGINS.left;
+    var xMax = WIDTH - MARGINS.right;
     var xRange = d3.time.scale()
-    .range([MARGINS.left, WIDTH - MARGINS.right])
+    .range([xMin, xMax])
     .domain([d3.min(metrics, function(metric) {
       return d3.min(metric.records, function(record) {
         return new Date(record.timeInMillis);
       });
-    }), d3.max(metrics, function(metric) {
-      return d3.max(metric.records, function(record) {
-        return new Date(record.timeInMillis);
-      });
-    })]);
+    }), new Date()]);
+    var yMin = HEIGHT - MARGINS.top;
+    var yMax = MARGINS.bottom;
     var yRange = d3.scale.linear()
-    .range([HEIGHT-MARGINS.top, MARGINS.bottom])
+    .range([yMin, yMax])
     .domain([lambdaMetricScores(metrics, d3.min), lambdaMetricScores(metrics, d3.max)]);
     var xAxis = d3.svg.axis()
     .scale(xRange)
@@ -133,6 +143,12 @@ GraphUtil = (function() {
     .orient('left')
     .tickFormat(d3.format(".0%"))
     .tickSubdivide(true);
+    vis.append('svg:line')
+      .attr('class', 'mousemove')
+      .attr('stroke', 'white')
+      .attr('stroke-width', 2)
+      .attr('stroke-opacity', 0.9);
+
     vis.append('svg:g')
     .attr('class', 'x axis')
     .attr('stroke', 'white')
@@ -152,17 +168,19 @@ GraphUtil = (function() {
     console.log(focusedIndex);
     for (var i = metrics.length - 1; i >= 0; i--) {
       var lineFunc = d3.svg.line()
-      .x(function(record) {
-        return xRange(new Date(record.timeInMillis));
-      })
-      .y(function(record) {
-        var base = metrics[i].records[0].score;
-        if (base < 0) {
-          base = 1;
-        }
-        return yRange((record.score - base) / base);
-      })
-      .interpolate('step');
+        .x(function(record) {
+          return xRange(new Date(record.timeInMillis));
+        })
+        .y(function(record) {
+          var base = metrics[i].records[0].score;
+          console.log(metrics[i].name, base);
+          base = base * metrics[i].c + metrics[i].k;
+          if (base < 0) {
+            base = 1;
+          }
+          return yRange((metrics[i].c * record.score + metrics[i].k - base) / base);
+        })
+        .interpolate('step');
 
       var strokeWidth = 1;
       if (focusedIndex) {
@@ -189,6 +207,28 @@ GraphUtil = (function() {
         renderGraph(metricsData, fitnessScoreName, width, i);
       });
     }
+    vis.on("mouseover", function() {
+      var line = d3.select('#visualization > .mousemove');
+      line.attr("visibility", "visible");
+    });
+    vis.on("mouseout", function() {
+      var line = d3.select('#visualization > .mousemove');
+      line.attr("visibility", "hidden");
+    });
+    vis.on("mousemove", function() {
+      var line = d3.select('#visualization > .mousemove');
+      var rX = d3.mouse(this)[0];
+      if (rX < xMin) {
+        line.attr("visibility", "hidden");
+      } else {
+        line
+          .attr("visibility", "visible")
+          .attr("x1", rX)
+          .attr("x2", rX)
+          .attr("y1", yMin)
+          .attr("y2", yMax);
+      }
+    });
   }
 
   function lambdaMetricScores(metrics, func) {
@@ -197,11 +237,12 @@ GraphUtil = (function() {
       if (metric.records.length > 0) {
         base = metric.records[0].score;
       }
+      base = base * metric.c + metric.k;
       if (base < 1) {
         base = 1;
       }
       return func(metric.records, function(record) {
-        return (record.score - base) / base;
+        return (metric.c * record.score + metric.k - base) / base;
       });
     });
   }

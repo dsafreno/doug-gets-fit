@@ -15,12 +15,12 @@ app.controller('MainCtrl', function ($scope, $location) {
   $scope.profileUrl = authData.facebook.cachedUserProfile.picture.data.url;
   $scope.displayName = authData.facebook.cachedUserProfile.first_name.toUpperCase();
   var fitnessScoreName = authData.facebook.cachedUserProfile.first_name + " Fitness Score";
+  console.log('here!')
   var ref = firebase.child('users').child(authData.uid).child('metrics');
   ref.on('value', function(snap) {
-    // var metrics = snap.val();
-    $scope.metrics = metrics;
+    var metrics = snap.val();
     if (metrics.weight !== 'placeholder' && metrics.numerators !== 'placeholder') {
-      GraphUtil.displayMetrics(metrics, fitnessScoreName);
+      $scope.metrics = GraphUtil.displayMetrics(metrics, fitnessScoreName);
     } else {
       $location.path('/data');
     }

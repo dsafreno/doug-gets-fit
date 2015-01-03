@@ -26,6 +26,14 @@ var colors = {
       r: 118,
       g: 84,
       b: 249
+    }, {
+      r: 204,
+      g: 204,
+      b: 204
+    }, {
+      r: 199,
+      g: 98,
+      b: 54
     }
   ],
 
@@ -33,9 +41,10 @@ var colors = {
     if (!alpha) {
       alpha = 1
     }
+    console.log('colorstart', index);
     var color = this.data[index];
     var colorString = 'rgba(' + color.r + ', ' + color.g + ', ' + color.b + ', ' + alpha + ')';
-    console.log(colorString);
+    console.log('colorend', index);
     return colorString;
   }
 }

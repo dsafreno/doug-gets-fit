@@ -1,0 +1,1775 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"numer",
+				"numerators"
+			],
+			[
+				"max",
+				"maxY"
+			],
+			[
+				"m",
+				"maxX"
+			],
+			[
+				"starti",
+				"startingY"
+			],
+			[
+				"get",
+				"getX"
+			],
+			[
+				"st",
+				"startingY"
+			],
+			[
+				"start",
+				"startingX"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"Snake",
+				"SnakeSection"
+			],
+			[
+				"D",
+				"DOWN"
+			],
+			[
+				"Sn",
+				"SNAKE_OVERFLOW"
+			],
+			[
+				"S",
+				"SNAKE_OVERFLOW"
+			],
+			[
+				"prot",
+				"prototype"
+			],
+			[
+				"RIGH",
+				"RIGHT_KEY_CODE"
+			],
+			[
+				"DOW",
+				"DOWN_KEY_CODE"
+			],
+			[
+				"counterE",
+				"counterexampleAlpha"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"in",
+				"inline-table"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"CHA",
+				"CHALLENGE_LEN"
+			],
+			[
+				"bitar",
+				"bitarray_equal"
+			],
+			[
+				"setup",
+				"_setup_keys"
+			],
+			[
+				"bit",
+				"bitarray_len"
+			],
+			[
+				"current",
+				"currentTimeInMillis"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/scripts/controllers/signin.js",
+			"settings":
+			{
+				"buffer_size": 1011,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/controllers/main.js",
+			"settings":
+			{
+				"buffer_size": 1904,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "rawParser.rb",
+			"settings":
+			{
+				"buffer_size": 119,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/util/graph.js",
+			"settings":
+			{
+				"buffer_size": 6338,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/app.js",
+			"settings":
+			{
+				"buffer_size": 885,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/controllers/data.js",
+			"settings":
+			{
+				"buffer_size": 640,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/data.html",
+			"settings":
+			{
+				"buffer_size": 309,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/signin.html",
+			"settings":
+			{
+				"buffer_size": 175,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/styles/main.scss",
+			"settings":
+			{
+				"buffer_size": 3980,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/main.html",
+			"settings":
+			{
+				"buffer_size": 949,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				":",
+				":w - Save"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				":q",
+				"BracketHighlighter: Swap Quotes"
+			],
+			[
+				"",
+				"BracketHighlighter: Swap Quotes"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/dsafreno/Github/doug-gets-fit"
+	],
+	"file_history":
+	[
+		"/Users/dsafreno/Github/doug-gets-fit/raw.csv",
+		"/Users/dsafreno/Github/doug-gets-fit/.sass-cache/5803a086c9c967e1d697977301e3e029494b552a/main.scssc",
+		"/Users/dsafreno/Github/doug-gets-fit/.tmp/styles/main.css",
+		"/Users/dsafreno/Github/doug-gets-fit/node_modules/grunt-google-cdn/node_modules/bower/node_modules/cardinal/examples/.cardinalrc",
+		"/Users/dsafreno/Github/doug-gets-fit/.gitignore",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/es5-shim/CHANGES",
+		"/Users/dsafreno/Github/doug-gets-fit/node_modules/karma/lib/init/color_schemes.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/jquery/src/css.js",
+		"/Users/dsafreno/Github/doug-gets-fit/app/views/signin.html",
+		"/Users/dsafreno/Github/doug-gets-fit/node_modules/grunt-ng-annotate/node_modules/ng-annotate/node_modules/simple-is/simple-is.js",
+		"/Users/dsafreno/Github/doug-gets-fit/app/index.html",
+		"/Users/dsafreno/Github/doug-gets-fit/app/robots.txt",
+		"/Users/dsafreno/Github/doug-gets-fit/app/scripts/colors.js",
+		"/Users/dsafreno/Github/doug-gets-fit/app/util/graph.js",
+		"/Users/dsafreno/Github/doug-gets-fit/app/views/main.html",
+		"/Users/dsafreno/Github/doug-gets-fit/bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/es5-shim/es5-shim.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/es5-shim/es5-sham.min.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/es5-shim/es5-sham.map",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/es5-shim/es5-sham.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/es5-shim/CONTRIBUTORS.md",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/es5-shim/component.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/es5-shim/bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/es5-shim/.bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/d3/README.md",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/d3/LICENSE",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/d3/d3.min.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/d3/d3.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/d3/CONTRIBUTING.md",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/d3/composer.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/d3/bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/d3/.spmignore",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/d3/.bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-touch/README.md",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-touch/package.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-touch/bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-touch/angular-touch.min.js.map",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-touch/angular-touch.min.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-touch/angular-touch.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-touch/.bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-scenario/README.md",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-scenario/jstd-scenario-adapter.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-scenario/jstd-scenario-adapter-config.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-scenario/bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-scenario/angular-scenario.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-scenario/.bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-sanitize/README.md",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-sanitize/bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-sanitize/angular-sanitize.min.js.map",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-sanitize/angular-sanitize.min.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-sanitize/angular-sanitize.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-sanitize/.bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-route/README.md",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-route/bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-route/angular-route.min.js.map",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-route/angular-route.min.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-route/angular-route.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-route/.bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-resource/README.md",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-resource/bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-resource/angular-resource.min.js.map",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-resource/angular-resource.min.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-resource/angular-resource.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-resource/.bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-mocks/README.md",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-mocks/package.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-mocks/bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-mocks/angular-mocks.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-mocks/.bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-cookies/README.md",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-cookies/package.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-cookies/bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-cookies/angular-cookies.min.js.map",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-cookies/angular-cookies.min.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-cookies/angular-cookies.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-cookies/.bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-animate/README.md",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-animate/package.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-animate/bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-animate/angular-animate.min.js.map",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-animate/angular-animate.min.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-animate/angular-animate.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular-animate/.bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular/README.md",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular/package.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular/bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular/angular.min.js.map",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular/angular.min.js.gzip",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular/angular.min.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular/angular.js",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular/angular-csp.css",
+		"/Users/dsafreno/Github/doug-gets-fit/bower_components/angular/.bower.json",
+		"/Users/dsafreno/Github/doug-gets-fit/app/styles/main.scss",
+		"/Users/dsafreno/Github/doug-gets-fit/app/scripts/controllers/main.js",
+		"/Users/dsafreno/Github/doug-gets-fit/app/scripts/app.js",
+		"/Users/dsafreno/Github/doug-gets-fit/app/404.html",
+		"/Users/dsafreno/Github/doug-gets-fit/app/.htaccess",
+		"/Users/dsafreno/Github/doug-gets-fit/app/.buildignore",
+		"/Users/dsafreno/Github/doug-gets-fit/package.json",
+		"/Users/dsafreno/Github/doug-gets-fit/Gruntfile.js",
+		"/Users/dsafreno/Github/doug-gets-fit/empty.json",
+		"/Users/dsafreno/Downloads/doug-gets-fit-export.json",
+		"/Users/dsafreno/Github/snake-starter/js/SnakeSection.js",
+		"/Users/dsafreno/Github/snake-starter/js/SnakeWorldObject.js",
+		"/Users/dsafreno/Github/snake-starter/js/DrawUtil.js",
+		"/Users/dsafreno/Github/snake-starter/js/SnakeFood.js",
+		"/Users/dsafreno/Github/snake-starter/js/Snake.js",
+		"/Users/dsafreno/Github/snake-starter/js/SnakeGame.js",
+		"/Users/dsafreno/Github/snake-js/js/SnakeSection.js",
+		"/Users/dsafreno/Github/snake-js/js/SnakeWorldObject.js",
+		"/Users/dsafreno/Github/snake-js/js/Snake.js",
+		"/Users/dsafreno/Github/snake-js/js/SnakeFood.js",
+		"/Users/dsafreno/Github/snake-js/js/SnakeGame.js",
+		"/Users/dsafreno/Github/snake-js/js/script.js",
+		"/Users/dsafreno/Github/snake-js/server.py",
+		"/Users/dsafreno/Github/hearth-predictor/algo/test_baseline.sh",
+		"/Users/dsafreno/Github/hearth-predictor/algo/bigram.rb",
+		"/Users/dsafreno/Github/hearth-predictor/data/cleaned-2014-11-13 08:19:11 UTC.json",
+		"/Users/dsafreno/Github/hearth-predictor/data/data-2014-10-21 05:58:23 UTC.json",
+		"/Users/dsafreno/Github/hearth-predictor/data/assembled-2014-10-22 05:16:44 UTC.json",
+		"/Users/dsafreno/Github/hearth-predictor/assembled-2014-10-22 05:16:44 UTC.json",
+		"/Users/dsafreno/Github/hearth-predictor/assembler.rb",
+		"/Users/dsafreno/Github/hearth-predictor/cleaner.rb",
+		"/Users/dsafreno/Github/doug-gets-fit/node_modules/grunt-svgmin/node_modules/svgo/node_modules/sax/test/buffer-overrun.js",
+		"/Users/dsafreno/Github/doug-gets-fit/node_modules/grunt-autoprefixer/node_modules/autoprefixer/node_modules/caniuse-db/features-json/offline-apps.json",
+		"/Users/dsafreno/Github/doug-gets-fit/node_modules/grunt-autoprefixer/node_modules/autoprefixer/node_modules/caniuse-db/features-json/css-appearance.json",
+		"/Users/dsafreno/Github/doug-gets-fit/node_modules/grunt-wiredep/node_modules/wiredep/node_modules/bower-config/node_modules/mout/src/array/append.js",
+		"/Users/dsafreno/Github/doug-gets-fit/node_modules/grunt-svgmin/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/lib/action/append.js"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"*"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"data",
+			"row",
+			"data",
+			"set",
+			"once",
+			"metrics",
+			"firebase.",
+			"metrics",
+			"sameLocation",
+			"gameLoop",
+			"puts",
+			"distance",
+			"domain",
+			"given",
+			"@given",
+			"id",
+			"rating",
+			"focusedIndex",
+			"firebase",
+			"main",
+			"width",
+			"resize",
+			"translate",
+			"this.alive",
+			"==",
+			"renderGraph",
+			"vis-wr",
+			"2",
+			"margin",
+			"vis",
+			"lambda",
+			"portrait",
+			"dougGetsFit2",
+			"print",
+			"getMoveTimeout",
+			"getMoveTimeoutn",
+			"getMoveTimeout",
+			"Game",
+			"Agent",
+			"generateSuccessor",
+			"State",
+			"state",
+			"stop",
+			"STOP",
+			"getScore",
+			"Terminal",
+			"gym",
+			"deckSize",
+			"getQ",
+			"simulate",
+			"Fixed",
+			"incor",
+			"getQ",
+			"xtract",
+			"state",
+			"state =",
+			"Q",
+			"QL",
+			"Value",
+			"simulate",
+			"simu",
+			"simulate",
+			"score",
+			"+=",
+			"copy",
+			"continue",
+			"print",
+			"deck",
+			"score",
+			"metrics",
+			"header",
+			"fot-size",
+			"bold",
+			"inline-block",
+			"input",
+			"KDF",
+			"sec",
+			".trace",
+			".log",
+			"trace",
+			"log",
+			"check",
+			"trace",
+			"END",
+			"end",
+			"client_options",
+			".end",
+			"end",
+			"close",
+			"END",
+			"disconnect",
+			"check_cert",
+			"generate_response",
+			"sign",
+			"secret_key",
+			"key",
+			"ECDSA",
+			"send_message",
+			"send",
+			"session_send",
+			"session_callback",
+			"msg",
+			"==",
+			"host",
+			"TODO",
+			"publicKey",
+			"verify",
+			"bitarray_len",
+			"length",
+			"base",
+			"bitarray",
+			"concat",
+			"HMAC",
+			"hmac",
+			"random",
+			"createServer",
+			"createServern",
+			"createServer",
+			"tls",
+			"TLS",
+			"mpi_path",
+			"server_key",
+			"tls",
+			"create",
+			"createServer",
+			"unwra",
+			"cert",
+			"TODO"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"// I would use S/KEY in order to secure any sort of password based\n// authentication. Any user data that is worth putting a password in front of\n// is, in my opinion, worth securing with S/KEY considering its ease of\n// implementation for the user. The important downside of S/KEY over TOTP is\n// that it has a limited number of logins before a new key has to be generated;\n// however, this limited number can easily be order 2^12 by using the pebble\n// implementation. This number is sufficiently large that no user will\n// ever realistically exhaust this.\n//\n// I would not use S/KEY in place of encryption. For instance, if every packet\n// a user sent had to be authenticated, S/KEY's limit would quickly be reached.\n// But for any authentication involving a user typing in a password, S/KEY is\n// an elegant solution for effectively protecting their data.\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/scripts/controllers/signin.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1011,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								860,
+								860
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/scripts/controllers/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1904,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1212,
+								1212
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 372.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "rawParser.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								119,
+								119
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/scripts/util/graph.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6338,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								440,
+								440
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/scripts/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 885,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								697,
+								697
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/scripts/controllers/data.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 640,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								629,
+								629
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"open_with_edit": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/views/data.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								238,
+								238
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"open_with_edit": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/views/signin.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 175,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								133,
+								133
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/styles/main.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3980,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								78,
+								78
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1814.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/views/main.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 949,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								729,
+								729
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "doug-gets-fit.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"rawp",
+				"rawParser.rb"
+			],
+			[
+				"mainjs",
+				"app/scripts/controllers/main.js"
+			],
+			[
+				"signin",
+				"app/scripts/controllers/signin.js"
+			],
+			[
+				"main.scss",
+				"app/styles/main.scss"
+			],
+			[
+				".css",
+				".tmp/styles/main.css"
+			],
+			[
+				"sign",
+				"app/views/signin.html"
+			],
+			[
+				"app",
+				"app/scripts/app.js"
+			],
+			[
+				"",
+				"bower.json"
+			],
+			[
+				"snakewor",
+				"js/SnakeWorldObject.js"
+			],
+			[
+				"snake.js",
+				"js/Snake.js"
+			],
+			[
+				"snakese",
+				"js/SnakeSection.js"
+			],
+			[
+				"snakesec",
+				"js/SnakeSection.js"
+			],
+			[
+				"snakega",
+				"js/SnakeGame.js"
+			],
+			[
+				"snakeworld",
+				"js/SnakeWorldObject.js"
+			],
+			[
+				"scr",
+				"js/script.js"
+			],
+			[
+				"test",
+				"algo/test_kmeans.sh"
+			],
+			[
+				"testsh",
+				"algo/test_bigram.sh"
+			],
+			[
+				"bigramold",
+				"algo/bigramold.rb"
+			],
+			[
+				"bigram",
+				"algo/bigram.rb"
+			],
+			[
+				"bigr",
+				"algo/bigram.rb"
+			],
+			[
+				"bigra",
+				"algo/bigram.rb"
+			],
+			[
+				"assem",
+				"assembled-2014-10-22 05:16:44 UTC.json"
+			],
+			[
+				"bower",
+				"bower.json"
+			],
+			[
+				"snake",
+				"js/Snake.js"
+			],
+			[
+				"snfo",
+				"js/SnakeFood.js"
+			],
+			[
+				"js",
+				"js/script.js"
+			],
+			[
+				"index",
+				"app/index.html"
+			],
+			[
+				"main",
+				"app/views/main.html"
+			],
+			[
+				"main.js",
+				"app/scripts/controllers/main.js"
+			],
+			[
+				"css",
+				"doug-gets-fit.css"
+			],
+			[
+				".js",
+				".jshintrc"
+			],
+			[
+				"main.html",
+				"app/views/main.html"
+			],
+			[
+				"app.js",
+				"app/scripts/app.js"
+			],
+			[
+				"game",
+				"game.py"
+			],
+			[
+				"gho",
+				"ghostAgents.py"
+			],
+			[
+				"sub",
+				"submission.py"
+			],
+			[
+				"ind",
+				"index.html"
+			],
+			[
+				"grader",
+				"grader.py"
+			],
+			[
+				"util",
+				"util.py"
+			],
+			[
+				"subm",
+				"submission.py"
+			],
+			[
+				"oracle",
+				"oracle.rb"
+			],
+			[
+				"cra",
+				"crawler.rb"
+			],
+			[
+				"index.",
+				"index.html"
+			],
+			[
+				"doug-g",
+				"doug-gets-fit.js"
+			],
+			[
+				"package",
+				"package.json"
+			],
+			[
+				"server",
+				"server.js"
+			],
+			[
+				"doug-gets-fit.js",
+				"doug-gets-fit.js"
+			],
+			[
+				"grid",
+				"grid.css"
+			],
+			[
+				"answers",
+				"answers.txt"
+			],
+			[
+				"lib",
+				"lib.js"
+			],
+			[
+				"test.",
+				"test.js"
+			],
+			[
+				"gen_",
+				"gen_all.py"
+			],
+			[
+				"clien",
+				"client.js"
+			],
+			[
+				"sjcl",
+				"sjcl.js"
+			],
+			[
+				"pass",
+				"password-manager.js"
+			],
+			[
+				"space",
+				"space_finder.rb"
+			],
+			[
+				"chatstate",
+				"ChatState.java"
+			],
+			[
+				"chatserver",
+				"ChatServer.java"
+			],
+			[
+				"read",
+				"README.txt"
+			],
+			[
+				"chat",
+				"Chat.java"
+			],
+			[
+				"chat.th",
+				"chat.html"
+			],
+			[
+				"chatser",
+				"ChatServer.java"
+			],
+			[
+				"ske",
+				"skey.js"
+			],
+			[
+				"rea",
+				"README.txt"
+			],
+			[
+				"worker",
+				"ChatWorker.java"
+			],
+			[
+				"chatthre",
+				"ChatThread.java"
+			],
+			[
+				"skey",
+				"skey.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 277.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
