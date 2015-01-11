@@ -23,21 +23,26 @@ var app = angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngQuickDate'
   ])
   .config(function ($routeProvider) {
     $routeProvider
+      .when('/record', {
+        templateUrl: 'views/record.html',
+        controller: 'RecordCtrl'
+      })
       .when('/main', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/', {
-        templateUrl: 'views/signin.html',
-        controller: 'SigninCtrl'
-      })
       .when('/data', {
         templateUrl: 'views/data.html',
         controller: 'DataCtrl'
+      })
+      .when('/', {
+        templateUrl: 'views/signin.html',
+        controller: 'SigninCtrl'
       })
       .otherwise({
         redirectTo: '/'

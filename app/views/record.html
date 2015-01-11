@@ -1,0 +1,10 @@
+<div class="center-content">
+  <div class="data">
+    <span> Time: <quick-datepicker ng-model="date"/> </span>
+    <span> Weight: <input type="number" step= "0.1" ng-model="weight"/> </span>
+    <div ng-repeat-start="numerator in numerators" ng-repeat-end>
+      <span> {{ numerator.name }}: <input id="{{ numerator.name }}" class="metric-input" type="number" /> </span>
+    </div>
+    <a class="button submit" ng-click="submit()"> SUBMIT </a>
+  </div>
+</div>

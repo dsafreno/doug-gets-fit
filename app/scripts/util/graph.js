@@ -1,46 +1,55 @@
 GraphUtil = (function() {
   var ret = {
-    displayMetrics: function(metrics, fitnessScoreName) {
-      var displayMetrics = [];
-      displayMetrics.push({
-        name: fitnessScoreName,
-        score: fitnessScore(metrics, Date.now()),
-        background: colors.get(0, 0.5)
-      });
-      displayMetrics.push({
-        name: "Weight",
-        score: _.last(metrics.weight).score,
-        background: colors.get(1, 0.5)
-      });
-      console.log(metrics);
-      _.each(metrics.numerators, function(numerator, index) {
-        console.log(numerator, index);
-        var record = _.last(numerator.records);
-        console.log(record);
-        displayMetrics.push({
-          name: numerator.name,
-          score: numerator.c * record.score + numerator.k,
-          background: colors.get(index + 2, 0.5)
-        });
-        console.log("end");
-      });
-      console.log('hello??');
-      displayMetrics = _.map(displayMetrics, function(displayMetric, index) {
-        if (index === 0) {
-          displayMetric.score = (Math.round(displayMetric.score * 100) / 100).toFixed(2);
-        } else {
-          displayMetric.score = (Math.round(displayMetric.score * 10) / 10).toFixed(1);
-        }
-        return displayMetric;
-      });
+    displayMetrics: function(metrics, fitnessScoreName, $scope) {
+      chooseDisplayMetrics(metrics, fitnessScoreName, $scope);
       $(window).resize(function() {
-        renderGraph(metrics, fitnessScoreName, $(window).width() - 400);
+        renderGraph($scope, metrics, fitnessScoreName, $(window).width() - 400);
       });
-      renderGraph(metrics, fitnessScoreName, 2000);
+      renderGraph($scope, metrics, fitnessScoreName, 2000);
       $(window).resize();
-      return displayMetrics;
     }
   };
+
+  function chooseDisplayMetrics(metrics, fitnessScoreName, $scope, time) {
+    if (time === undefined) {
+      time = Date.now();
+    }
+    var displayMetrics = [];
+    displayMetrics.push({
+      name: fitnessScoreName,
+      score: fitnessScore(metrics, time),
+      background: colors.get(0, 0.5)
+    });
+    console.log("HELLO", time);
+    displayMetrics.push({
+      name: "Weight",
+      score: lastRecordBefore(metrics.weight, time, 0).score,
+      background: colors.get(1, 0.5)
+    });
+    console.log(metrics);
+    _.each(metrics.numerators, function(numerator, index) {
+      console.log(numerator, index);
+      var record = lastRecordBefore(numerator.records, time, numerator.k);
+      console.log(record);
+      displayMetrics.push({
+        name: numerator.name,
+        score: numerator.c * record.score + numerator.k,
+        background: colors.get(index + 2, 0.5)
+      });
+      console.log("end");
+    });
+    console.log('hello??');
+    displayMetrics = _.map(displayMetrics, function(displayMetric, index) {
+      if (index === 0) {
+        displayMetric.score = (Math.round(displayMetric.score * 100) / 100).toFixed(2);
+      } else {
+        displayMetric.score = (Math.round(displayMetric.score * 10) / 10).toFixed(1);
+      }
+      return displayMetric;
+    });
+    $scope.metrics = displayMetrics;
+    $scope.$apply();
+  }
 
   function constructFitnessScores(metricsData, fitnessScoreName) {
     var dates = [];
@@ -98,7 +107,7 @@ GraphUtil = (function() {
     return sum / lastRecordBefore(metrics.weight, timeInMillis, 0).score;
   }
 
-  function renderGraph(metricsData, fitnessScoreName, width, focusedIndex) {
+  function renderGraph($scope, metricsData, fitnessScoreName, width, focusedIndex) {
     var MARGINS = {
       top: 20,
       right: 20,
@@ -121,13 +130,20 @@ GraphUtil = (function() {
     var HEIGHT = $("#visualization").height();
     var xMin = MARGINS.left;
     var xMax = WIDTH - MARGINS.right;
+    var now = new Date();
     var xRange = d3.time.scale()
     .range([xMin, xMax])
     .domain([d3.min(metrics, function(metric) {
       return d3.min(metric.records, function(record) {
         return new Date(record.timeInMillis);
       });
-    }), new Date()]);
+    }), now]);
+    _.each(metrics, function(metric) {
+      metric.records.push({
+        timeInMillis: now.getTime(),
+        score: _.last(metric.records).score
+      });
+    });
     var yMin = HEIGHT - MARGINS.top;
     var yMax = MARGINS.bottom;
     var yRange = d3.scale.linear()
@@ -204,22 +220,20 @@ GraphUtil = (function() {
       .attr('stroke-width', 10)
       .attr('fill', 'none')
       .on('click', function() {
-        renderGraph(metricsData, fitnessScoreName, width, i);
+        renderGraph($scope, metricsData, fitnessScoreName, width, i);
       });
     }
-    vis.on("mouseover", function() {
-      var line = d3.select('#visualization > .mousemove');
-      line.attr("visibility", "visible");
-    });
     vis.on("mouseout", function() {
       var line = d3.select('#visualization > .mousemove');
       line.attr("visibility", "hidden");
+      chooseDisplayMetrics(metricsData, fitnessScoreName, $scope);
     });
     vis.on("mousemove", function() {
       var line = d3.select('#visualization > .mousemove');
       var rX = d3.mouse(this)[0];
       if (rX < xMin) {
         line.attr("visibility", "hidden");
+        chooseDisplayMetrics(metricsData, fitnessScoreName, $scope);
       } else {
         line
           .attr("visibility", "visible")
@@ -227,6 +241,7 @@ GraphUtil = (function() {
           .attr("x2", rX)
           .attr("y1", yMin)
           .attr("y2", yMax);
+        chooseDisplayMetrics(metricsData, fitnessScoreName, $scope, xRange.invert(rX));
       }
     });
   }

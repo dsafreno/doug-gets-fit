@@ -11,6 +11,7 @@ app.controller('MainCtrl', function ($scope, $location) {
   var authData = firebase.getAuth();
   if (authData === null) {
     $location.path("/");
+    return;
   }
   $scope.profileUrl = authData.facebook.cachedUserProfile.picture.data.url;
   $scope.displayName = authData.facebook.cachedUserProfile.first_name.toUpperCase();
@@ -20,12 +21,15 @@ app.controller('MainCtrl', function ($scope, $location) {
   ref.on('value', function(snap) {
     var metrics = snap.val();
     if (metrics.weight !== 'placeholder' && metrics.numerators !== 'placeholder') {
-      $scope.metrics = GraphUtil.displayMetrics(metrics, fitnessScoreName);
+      GraphUtil.displayMetrics(metrics, fitnessScoreName, $scope);
     } else {
       $location.path('/data');
     }
     $scope.$apply();
   });
+  $scope.newRecord = function() {
+    $location.path("/record");
+  }
 });
 
 
