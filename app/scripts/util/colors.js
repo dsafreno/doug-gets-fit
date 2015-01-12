@@ -41,10 +41,8 @@ var colors = {
     if (!alpha) {
       alpha = 1
     }
-    console.log('colorstart', index);
     var color = this.data[index];
     var colorString = 'rgba(' + color.r + ', ' + color.g + ', ' + color.b + ', ' + alpha + ')';
-    console.log('colorend', index);
     return colorString;
   }
 }

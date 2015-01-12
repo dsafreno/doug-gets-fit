@@ -20,25 +20,19 @@ GraphUtil = (function() {
       score: fitnessScore(metrics, time),
       background: colors.get(0, 0.5)
     });
-    console.log("HELLO", time);
     displayMetrics.push({
       name: "Weight",
       score: lastRecordBefore(metrics.weight, time, 0).score,
       background: colors.get(1, 0.5)
     });
-    console.log(metrics);
     _.each(metrics.numerators, function(numerator, index) {
-      console.log(numerator, index);
       var record = lastRecordBefore(numerator.records, time, numerator.k);
-      console.log(record);
       displayMetrics.push({
         name: numerator.name,
         score: numerator.c * record.score + numerator.k,
         background: colors.get(index + 2, 0.5)
       });
-      console.log("end");
     });
-    console.log('hello??');
     displayMetrics = _.map(displayMetrics, function(displayMetric, index) {
       if (index === 0) {
         displayMetric.score = (Math.round(displayMetric.score * 100) / 100).toFixed(2);
@@ -104,7 +98,11 @@ GraphUtil = (function() {
     _.each(metrics.numerators, function(numerator) {
       sum += (lastRecordBefore(numerator.records, timeInMillis, numerator.k).score * numerator.c + numerator.k) * numerator.factor;
     });
-    return sum / lastRecordBefore(metrics.weight, timeInMillis, 0).score;
+    var dfs = sum / lastRecordBefore(metrics.weight, timeInMillis, 0).score;
+    if (metrics.factor) {
+      dfs *= metrics.factor;
+    }
+    return dfs;
   }
 
   function renderGraph($scope, metricsData, fitnessScoreName, width, focusedIndex) {
@@ -181,7 +179,6 @@ GraphUtil = (function() {
     .attr('fill', 'white')
     .attr('transform', 'translate(' + (MARGINS.left) + ',0)')
     .call(yAxis);
-    console.log(focusedIndex);
     for (var i = metrics.length - 1; i >= 0; i--) {
       var lineFunc = d3.svg.line()
         .x(function(record) {
@@ -189,7 +186,6 @@ GraphUtil = (function() {
         })
         .y(function(record) {
           var base = metrics[i].records[0].score;
-          console.log(metrics[i].name, base);
           base = base * metrics[i].c + metrics[i].k;
           if (base < 0) {
             base = 1;
@@ -207,7 +203,6 @@ GraphUtil = (function() {
       if (focusedIndex) {
         colors.get(i, focusedIndex === i ? 1 : 0.3)
       }
-      console.log(i);
 
       vis.append('svg:path')
       .attr('d', lineFunc(metrics[i].records))
@@ -241,7 +236,7 @@ GraphUtil = (function() {
           .attr("x2", rX)
           .attr("y1", yMin)
           .attr("y2", yMax);
-        chooseDisplayMetrics(metricsData, fitnessScoreName, $scope, xRange.invert(rX));
+        chooseDisplayMetrics(metricsData, fitnessScoreName, $scope, xRange.invert(rX + 4));
       }
     });
   }

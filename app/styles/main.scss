@@ -72,6 +72,13 @@ h1 {
   font-size: 40px;
 }
 
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  margin:0;
+}
+
 .yellow {
   color: $yellow;
 }
@@ -118,7 +125,7 @@ a.button:active {
   background-color: $active;
 }
 
-.data {
+.page-form {
   > * {
     display:block;
     margin-left: auto;
@@ -140,6 +147,33 @@ a.button:active {
     padding-left: 0;
     padding-right: 0;
     margin-top: 20px;
+  }
+}
+
+.record {
+  width: 280px;
+  font-size:25px;
+  font-weight: 300;
+
+  .quickdate {
+    font-family: "Open Sans", sans-serif;
+    float:right;
+    font-size: 20px;
+  }
+
+  input {
+    float:right;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    width: 100px;
+    border-radius: 5px;
+    text-align: right;
+  }
+
+  > * {
+    text-align: left;
+    margin:15px 0;
+    display:block;
   }
 }
 
