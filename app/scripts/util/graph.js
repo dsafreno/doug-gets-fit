@@ -1,4 +1,4 @@
-GraphUtil = (function() {
+var GraphUtil = (function() {
   var ret = {
     displayMetrics: function(metrics, fitnessScoreName, $scope) {
       chooseDisplayMetrics(metrics, fitnessScoreName, $scope);
@@ -192,7 +192,7 @@ GraphUtil = (function() {
           }
           return yRange((metrics[i].c * record.score + metrics[i].k - base) / base);
         })
-        .interpolate('step');
+        .interpolate('step-after');
 
       var strokeWidth = 1;
       if (focusedIndex) {
@@ -236,7 +236,7 @@ GraphUtil = (function() {
           .attr("x2", rX)
           .attr("y1", yMin)
           .attr("y2", yMax);
-        chooseDisplayMetrics(metricsData, fitnessScoreName, $scope, xRange.invert(rX + 4));
+        chooseDisplayMetrics(metricsData, fitnessScoreName, $scope, xRange.invert(rX));
       }
     });
   }

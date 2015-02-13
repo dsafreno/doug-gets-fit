@@ -16,6 +16,7 @@ app.controller('SigninCtrl', function ($scope, $location) {
   $scope.fblogin = function() {
     firebase.authWithOAuthPopup("facebook", function(error, authData) {
       if (error) {
+        console.log(error);
         alert("error logging in");
       } else {
         var ref = firebase.child('users').child(authData.uid);
