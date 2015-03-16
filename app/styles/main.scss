@@ -48,9 +48,17 @@ body {
 }
 
 .vis-wrapper {
+  position: relative;
   flex:1;
   overflow: scroll;
-  padding: 30px;
+  margin: 30px;
+}
+
+.date {
+  font-weight: 300;
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
 }
 
 .content {

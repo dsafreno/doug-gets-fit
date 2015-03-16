@@ -42,6 +42,7 @@ var GraphUtil = (function() {
       return displayMetric;
     });
     $scope.metrics = displayMetrics;
+    $scope.date = moment(time).format('MM/DD/YY hh:mm A');
     $scope.$apply();
   }
 
