@@ -23,9 +23,7 @@ app.controller('DataCtrl', function ($scope, $location) {
     }
     var authData = firebase.getAuth();
     var ref = firebase.child('users').child(authData.uid);
-    ref.update({
-      metrics: metrics
-    }, function() {
+    ref.update(metrics, function() {
       $location.path('/main');
       $scope.$apply();
     });

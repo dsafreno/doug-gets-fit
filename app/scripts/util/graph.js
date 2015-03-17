@@ -10,6 +10,20 @@ var GraphUtil = (function() {
     }
   };
 
+  function arrVersion(records) {
+    arr = [];
+    _.each(records, function(val, time) {
+      arr.push({
+        val: parseFloat(val),
+        time: parseInt(time)
+      })
+    })
+    arr.sort(function(a, b) {
+      return a.time - b.time;
+    })
+    return arr;
+  }
+
   function chooseDisplayMetrics(metrics, fitnessScoreName, $scope, time) {
     if (time === undefined) {
       time = Date.now();
@@ -22,16 +36,18 @@ var GraphUtil = (function() {
     });
     displayMetrics.push({
       name: "Weight",
-      score: lastRecordBefore(metrics.weight, time, 0).score,
+      score: lastRecordBefore(metrics.weight, time, 0).val,
       background: colors.get(1, 0.5)
     });
-    _.each(metrics.numerators, function(numerator, index) {
-      var record = lastRecordBefore(numerator.records, time, numerator.k);
+    var index = 0;
+    _.each(metrics.numerators, function(numerator, name) {
+      var record = lastRecordBefore(numerator.records, time);
       displayMetrics.push({
-        name: numerator.name,
-        score: numerator.c * record.score + numerator.k,
+        name: name,
+        score: numerator.multiplier * record.val + numerator.nullVal,
         background: colors.get(index + 2, 0.5)
       });
+      index += 1;
     });
     displayMetrics = _.map(displayMetrics, function(displayMetric, index) {
       if (index === 0) {
@@ -48,60 +64,63 @@ var GraphUtil = (function() {
 
   function constructFitnessScores(metricsData, fitnessScoreName) {
     var dates = [];
-    _.each(metricsData.weight, function(record) {
-      dates.push(record.timeInMillis);
+    _.each(metricsData.weight, function(recordVal, recordTime) {
+      dates.push(parseInt(recordTime));
     });
-
     _.each(metricsData.numerators, function(numerator) {
-      _.each(numerator.records, function(record) {
-        dates.push(record.timeInMillis);
+      _.each(numerator.records, function(recordVal, recordTime) {
+        dates.push(parseInt(recordTime));
       });
     });
     dates = _.uniq(_.sortBy(dates, function(date) { return date; }), true);
     return {
-      c: 1,
-      k: 0,
+      multiplier: 1,
+      nullVal: 0,
       name: fitnessScoreName,
       records: _.map(dates, function(date) {
         return {
-          score: fitnessScore(metricsData, date),
-          timeInMillis: date
+          val: fitnessScore(metricsData, date),
+          time: date
         }
       })
     }
   }
 
-  function lastRecordBefore(records, timeInMillis, baseScore) {
-    var retVal = _.reduce(records, function(bestRecord, record) {
-      var diff = timeInMillis - record.timeInMillis;
-      if (diff < 0) {
-        return bestRecord;
-      }
-      if (!bestRecord) {
-        return record;
-      }
-      if (diff < timeInMillis - bestRecord.timeInMillis) {
-        return record;
-      }
-      return bestRecord;
-    });
-    if (!retVal) {
-      retVal = {
-        timeInMillis: 0,
-        score: baseScore
-      }
+  function lastRecordBefore(records, targetTime, baseScore) {
+    if (baseScore === undefined) {
+      baseTime = -1
+      baseScore = 0;
+      _.each(records, function(val, time) {
+        if (baseTime < 0 || baseTime > time) {
+          baseTime = time;
+          baseScore = val;
+        }
+      });
     }
-    return retVal;
+    var bestTime = 0
+    var bestVal = baseScore
+    _.each(records, function(val, time) {
+      time = parseInt(time);
+      val = parseFloat(val);
+      if (time <= targetTime && time > bestTime) {
+        bestTime = time
+        bestVal = val
+      }
+    });
+    return {
+      time: bestTime,
+      val: bestVal
+    };
   }
 
-  function fitnessScore(metrics, timeInMillis) {
+  function fitnessScore(metrics, targetTime) {
     var sum = 0;
-    _.each(metrics.numerators, function(numerator) {
-      sum += (lastRecordBefore(numerator.records, timeInMillis, numerator.k).score * numerator.c + numerator.k) * numerator.factor;
+    _.each(metrics.numerators, function(numerator, name) {
+      sum += (lastRecordBefore(numerator.records, targetTime).val * numerator.multiplier + numerator.nullVal) * numerator.weighting;
     });
-    var dfs = sum / lastRecordBefore(metrics.weight, timeInMillis, 0).score;
-    if (metrics.factor) {
-      dfs *= metrics.factor;
+    var dfs = sum / lastRecordBefore(metrics.weight, targetTime, 0).val;
+    if (metrics.weighting) {
+      dfs *= metrics.weighting;
     }
     return dfs;
   }
@@ -115,12 +134,20 @@ var GraphUtil = (function() {
     };
     $('#visualization').width(width);
     $('#visualization').height($(window).height() - 70);
-    var metrics = _.clone(metricsData.numerators);
+    var metrics = []
+    _.each(metricsData.numerators, function(numerator, name) {
+      metrics.push({
+        name: name,
+        records: arrVersion(numerator.records),
+        multiplier: numerator.multiplier,
+        nullVal: numerator.nullVal
+      })
+    })
     metrics.unshift({
       name: "Weight",
-      records: metricsData.weight,
-      c: 1,
-      k: 0
+      records: arrVersion(metricsData.weight),
+      multiplier: 1,
+      nullVal: 0
     });
     metrics.unshift(constructFitnessScores(metricsData, fitnessScoreName));
     var vis = d3.select('#visualization');
@@ -134,13 +161,13 @@ var GraphUtil = (function() {
     .range([xMin, xMax])
     .domain([d3.min(metrics, function(metric) {
       return d3.min(metric.records, function(record) {
-        return new Date(record.timeInMillis);
+        return new Date(record.time);
       });
     }), now]);
     _.each(metrics, function(metric) {
       metric.records.push({
-        timeInMillis: now.getTime(),
-        score: _.last(metric.records).score
+        time: now.getTime(),
+        val: _.last(metric.records).val
       });
     });
     var yMin = HEIGHT - MARGINS.top;
@@ -183,15 +210,15 @@ var GraphUtil = (function() {
     for (var i = metrics.length - 1; i >= 0; i--) {
       var lineFunc = d3.svg.line()
         .x(function(record) {
-          return xRange(new Date(record.timeInMillis));
+          return xRange(new Date(record.time));
         })
         .y(function(record) {
-          var base = metrics[i].records[0].score;
-          base = base * metrics[i].c + metrics[i].k;
+          var base = metrics[i].records[0].val;
+          base = base * metrics[i].multiplier + metrics[i].nullVal;
           if (base < 0) {
             base = 1;
           }
-          return yRange((metrics[i].c * record.score + metrics[i].k - base) / base);
+          return yRange((metrics[i].multiplier * record.val + metrics[i].nullVal - base) / base);
         })
         .interpolate('step-after');
 
@@ -246,14 +273,14 @@ var GraphUtil = (function() {
     return func(metrics, function(metric) {
       var base = 0;
       if (metric.records.length > 0) {
-        base = metric.records[0].score;
+        base = metric.records[0].val;
       }
-      base = base * metric.c + metric.k;
+      base = base * metric.multiplier + metric.nullVal;
       if (base < 1) {
         base = 1;
       }
       return func(metric.records, function(record) {
-        return (metric.c * record.score + metric.k - base) / base;
+        return (metric.multiplier * record.val + metric.nullVal - base) / base;
       });
     });
   }
