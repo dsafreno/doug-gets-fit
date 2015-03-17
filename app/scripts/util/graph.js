@@ -88,7 +88,7 @@ var GraphUtil = (function() {
 
   function lastRecordBefore(records, targetTime, baseScore) {
     if (baseScore === undefined) {
-      baseTime = -1
+      var baseTime = -1
       baseScore = 0;
       _.each(records, function(val, time) {
         if (baseTime < 0 || baseTime > time) {
