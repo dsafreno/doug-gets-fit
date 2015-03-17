@@ -11,7 +11,7 @@ var GraphUtil = (function() {
   };
 
   function arrVersion(records) {
-    arr = [];
+    var arr = [];
     _.each(records, function(val, time) {
       arr.push({
         val: parseFloat(val),
