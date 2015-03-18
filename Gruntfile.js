@@ -24,6 +24,25 @@ module.exports = function (grunt) {
   // Define the configuration for all the tasks
   grunt.initConfig({
 
+    aws: grunt.file.readJSON('aws-keys.json'), // Read the file
+
+    aws_s3: {
+      options: {
+        accessKeyId: '<%= aws.AWSAccessKeyId %>', // Use the variables
+        secretAccessKey: '<%= aws.AWSSecretKey %>', // You can also use env variables
+        region: 'us-west-2',
+        bucket: 'douggetsfit.com',
+        progress: 'progressBar',
+        uploadConcurrency: 5, // 5 simultaneous uploads
+        downloadConcurrency: 5 // 5 simultaneous downloads
+      },
+      prod: {
+        files: [
+          { expand: true, cwd: 'dist/', src: ['**'], dest: '/' }
+        ]
+      }
+    },
+
     // Project settings
     yeoman: appConfig,
 
@@ -433,4 +452,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.loadNpmTasks('grunt-aws-s3');
 };

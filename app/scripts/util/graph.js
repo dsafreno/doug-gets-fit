@@ -97,14 +97,14 @@ var GraphUtil = (function() {
         }
       });
     }
-    var bestTime = 0
-    var bestVal = baseScore
+    var bestTime = 0;
+    var bestVal = baseScore;
     _.each(records, function(val, time) {
       time = parseInt(time);
       val = parseFloat(val);
       if (time <= targetTime && time > bestTime) {
-        bestTime = time
-        bestVal = val
+        bestTime = time;
+        bestVal = val;
       }
     });
     return {
